@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'General Sans Medium';
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#minicircle {
+    transition: cubic-bezier(0.19, 1, 0.22, 1) .35s;
+    width: 10px;
+    height: 10px;
+    background-color: white;
+    border-radius: 50%;
+    position: absolute;
+    z-index: 9999;
+}
+
+.bounding {
+    width: fit-content;
+    overflow: hidden;
+}
+
+.bounding .boundingelem {
+    transform: translateY(120%);
+}
+
+#main {
+    width: 100%;
+    background-color: #000;
+}
+
+#open {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    color: white;
+}
+
+.dropdown-button {
+    border: black;
+    color: white;
+    background-color: black;
+}
+
+.dropdown-menu {
+    display: none;
+    float: none;
+    color: black;
+    text-align: left;
+    position: absolute;
+    background-color: grey;
+    min-width: 80px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.dropdown-button:hover+.dropdown-menu {
+    display: block;
+}
+
+#nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#nav {
+    width: 100%;
+    padding: 20px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#heading h1 {
+    font-family: 'General Sans Medium';
+    font-size: 10vw;
+    font-weight: 800;
+    text-transform: uppercase;
+    line-height: 1;
+    opacity: .6;
+    margin-left: 30px;
+}
+
+#heading {
+    margin-top: 90px;
+}
+
+#heading #secondh1 {
+    margin-left: 250px;
+}
+
+.blocktext {
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+.blocktext h5 {
+    text-align: right;
+}
+
+#shortheading {
+    margin-top: 100px;
+    padding-right: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
+
+#shortheading h5 {
+    text-transform: uppercase;
+    text-align: right;
+    margin-top: 10px;
+}
+
+#openfooter {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 35px;
+    width: 100%;
+    padding: 0 1vw;
+}
+
+#openfooter a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+
+#openfooter #iconset {
+    display: flex;
+    gap: 4px;
+}
+
+#openfooter .circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: grey;
+    font-size: 25px;
+    text-align: center;
+}
+
+#secondpg {
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    padding-top: 200px;
+    padding-right: 10vw;
+    padding-left: 2vw;
+    position: relative;
+}
+
+.elem {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    border-top: 1px solid gray;
+    padding: 4vw 0vw 3vw 0vw;
+    padding-right: 0;
+    position: relative;
+}
+
+.elem h1 {
+    text-transform: uppercase;
+    color: white;
+    opacity: .6;
+    font-size: 7.6vw;
+    padding-top: 5px;
+    padding-right: 0;
+}
+
+.elem h5 {
+    color: white;
+}
+
+.elemlast {
+    border-bottom: 1px solid gray;
+}
+
+.elem img {
+    opacity: 0;
+    pointer-events: none;
+    height: 120%;
+    z-index: 999;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s; /* Smooth transition when showing/hiding */
+
+}
+
+#about {
+    width: 100%;
+    background-color: black;
+    padding: 10vw 5vw;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    padding-left: 30vw;
+}
+
+#about img {
+    width: 250px;
+}
+
+#textabout {
+    width: 35rem;
+}
+
+#textabout h5 {
+    text-transform: uppercase;
+    letter-spacing: .4em;
+    margin-bottom: 10px;
+    opacity: .6;
+}
+
+#textabout p {
+    line-height: 1.7;
+    padding-right: 82px;
+}
+
+/* #textabout a{
+    font-weight: bold;
+    transition: all  .3s ease-in-out;
+
+} */
+.glow-on-hover {
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #fff;
+    background: #111;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.glow-on-hover:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.glow-on-hover:active {
+    color: #000
+}
+
+.glow-on-hover:active:after {
+    background: transparent;
+}
+
+.glow-on-hover:hover:before {
+    opacity: 1;
+}
+
+.glow-on-hover:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 400% 0;
+    }
+
+    100% {
+        background-position: 0 0;
+    }
+}
+
+#subscribe {
+    color: white;
+    padding: 20px 30px;
+    padding-bottom: 7vw;
+    background-color: #000;
+    text-transform: uppercase;
+}
+
+#subscribe h5 {
+    font-size: 15px;
+    opacity: .6;
+    letter-spacing: .3em;
+}
+
+#subscribe h3 {
+    font-size: 15px;
+}
+
+#footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    padding: 20px 30px;
+}
+
+#footerleft {
+    display: flex;
+    float: right;
+    gap: 25px;
+    color: white;
+}
+
+#footerleft h5 {
+    font-size: 15px;
+}
+
+#footer a {
+    color: white;
+    text-decoration: none;
+    margin-right: 22px;
+    text-transform: uppercase;
+}
+
+#footer a {
+    background:
+        linear-gradient(to right,
+            rgb(0, 3, 3),
+            rgb(0, 2, 2)),
+        linear-gradient(to right,
+            rgba(255, 0, 0, 1),
+            rgba(255, 0, 180, 1),
+            rgba(0, 100, 200, 1));
+    background-size: 100% 3px, 0 3px;
+    background-position: 100% 100%, 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 400ms;
+}
+
+#footer a:hover {
+    background-size: 0 3px, 100% 3px;
+}
